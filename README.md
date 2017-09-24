@@ -50,12 +50,11 @@ Here's a terse summary of the GPG commands you'll need to generate and publish a
 ### Test with a local Nexus
 
 Try running with a local Nexus instance to get the hang of it:
- * download from [http://www.sonatype.org/downloads/nexus-latest-bundle.tar.gz](http://www.sonatype.org/downloads/nexus-latest-bundle.tar.gz "Sonatype download")
- * unpack
- * cd into `bin/`
- * run `./nexus`
- * `tail ../logs/wrapper.log`
- * open [http://localhost:8081/nexus/](http://localhost:8081/nexus/ "If you have Nexus installed and running locally this link will work for you")
+ * Map docker host port 8081 to guest in VirtualBox docker machine instance network settings
+ * Run with Docker, binding the exposed port 8081 to the host: `docker run -d -p 8081:8081 --name nexus sonatype/nexus3`
+ * Test Nexus instance is running: `curl -u admin:admin123 http://192.168.99.100:8081/service/metrics/ping`
+ * `docker logs nexus`
+ * open [http://localhost:8081/#browse/welcome](http://localhost:8081/#browse/welcome "If you have Nexus installed and running locally this link will work for you")
  * the default Nexus deployment username and password are already set in the example Maven `settings.xml` in the root of this project.
  * if you do practice releases, note that the tags created by the release plugin will get pushed to your remote so you'll need to delete them after practice runs. Deleting remote tags isn't obvious so here's a post that explains how: [http://nathanhoad.net/how-to-delete-a-remote-git-tag](http://nathanhoad.net/how-to-delete-a-remote-git-tag). 
 
