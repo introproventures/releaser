@@ -176,10 +176,13 @@
 				<version>1.6.4</version>
 				<extensions>true</extensions>
 				<configuration>
-					<serverId>sonatype-nexus-staging</serverId>
+					<serverId>localhost-nexus-staging</serverId>
+					<nexusUrl>https://localhost:8081/nexus</nexusUrl>
+					<autoReleaseAfterClose>true</autoReleaseAfterClose>
+<!-- 					<serverId>sonatype-nexus-staging</serverId>
 					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
 					<autoReleaseAfterClose>true</autoReleaseAfterClose>
-				</configuration>
+ -->				</configuration>
 			</plugin>
 
 		</plugins>
