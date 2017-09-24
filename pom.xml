@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.introproventures</groupId>
 	<artifactId>releaser</artifactId>
-	<version>0.0.7</version>
+	<version>0.0.8-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>Releaser</name>
 	<description>
@@ -26,7 +26,7 @@
 		<url>https://github.com/introproventures/releaser</url>
 		<connection>scm:git:git://github.com/introproventures/releaser.git</connection>
 		<developerConnection>scm:git:git@github.com:introproventures/releaser.git</developerConnection>
-		<tag>0.0.7</tag>
+		<tag>0.0.4</tag>
 	</scm>
 
 	<distributionManagement>
