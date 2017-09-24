@@ -31,20 +31,21 @@
 
 	</servers>
 
-	<!-- If opt to have you key passphrase automatically passed to the build, 
-		uncomment this section: -->
-	<!-- <profiles> -->
-	<!-- <profile> -->
-	<!-- <id>sign</id> -->
-	<!-- <property> -->
-	<!-- <name>performRelease</name> -->
-	<!-- <value>true</value> -->
-	<!-- </property> -->
-	<!-- <properties> -->
-	<!-- <gpg.passphrase>NB this is where you want to encrypt your passphrase. 
-		See http://maven.apache.org/guides/mini/guide-encryption.html</gpg.passphrase> -->
-	<!-- </properties> -->
-	<!-- </profile> -->
-	<!-- </profiles> -->
-
+	<!-- If opt to have you key passphrase automatically passed to the build, uncomment this section: -->
+<!-- 	<profiles>
+		<profile>
+			<id>sign</id>
+			<activation>
+	 			<property>
+					<name>performRelease</name>
+					<value>true</value>
+				</property>
+			</activation>
+ 			<properties>
+				<gpg.passphrase>NB this is where you want to encrypt your passphrase. 
+					See http://maven.apache.org/guides/mini/guide-encryption.html</gpg.passphrase>		
+			</properties>
+		</profile>
+	</profiles>
+ -->
 </settings>
