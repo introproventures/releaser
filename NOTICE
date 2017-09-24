@@ -1,6 +1,6 @@
 Releaser - an example for getting your project to Maven Central.
    
-     Copyright (C) 2013  David Carboni.
+     Copyright (C) 2017 IntroPro Ventures Inc.
 
      This library is free software; you can redistribute it and/or
      modify it under the terms of the Apache 2.0 License as published
@@ -10,5 +10,4 @@ Releaser - an example for getting your project to Maven Central.
      but WITHOUT ANY WARRANTY; without even the implied warranty of
      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-If you have any questions please contact me via https://github.com/davidcarboni/
-or @davidcarboni
+If you have any questions please contact via https://github.com/introproventures
