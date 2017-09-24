@@ -159,7 +159,7 @@
 				<version>2.5</version>
 
 				<configuration>
-					<tagNameFormat>v@{project.version}</tagNameFormat>
+					<tagNameFormat>@{project.version}-RELEASE</tagNameFormat>
 				    <autoVersionSubmodules>true</autoVersionSubmodules>
 				    <releaseProfiles>releases</releaseProfiles>
 					<!-- Automated passphrase entry: -->
