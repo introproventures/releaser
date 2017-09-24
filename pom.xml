@@ -85,6 +85,15 @@
 
 		<plugins>
 
+			<plugin>
+			   <groupId>org.apache.maven.plugins</groupId>
+			   <artifactId>maven-deploy-plugin</artifactId>
+			   <version>${maven-deploy-plugin.version}</version>
+			   <configuration>
+			      <skip>true</skip>
+			   </configuration>
+			</plugin>
+
 			<!-- Optional: JVM 1.6 compliance and UTF-8 encoding: -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -151,6 +160,9 @@
 				<version>2.5</version>
 
 				<configuration>
+					<tagNameFormat>v@{project.version}</tagNameFormat>
+				    <autoVersionSubmodules>true</autoVersionSubmodules>
+				    <releaseProfiles>releases</releaseProfiles>
 					<!-- Automated passphrase entry: -->
 
 					<!-- To pass your passphrase to the build automatically, so avoiding 
@@ -169,25 +181,43 @@
 				</configuration>
 			</plugin>
 			
-			<!-- Deployment -->
-			<plugin>
-				<groupId>org.sonatype.plugins</groupId>
-				<artifactId>nexus-staging-maven-plugin</artifactId>
-				<version>1.6.7</version>
-				<extensions>true</extensions>
-				<configuration>
-					<serverId>localhost-nexus-staging</serverId>
-					<nexusUrl>http://localhost:8081/nexus</nexusUrl>
-<!-- 					<serverId>sonatype-nexus-staging</serverId>
-					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
-					<autoReleaseAfterClose>true</autoReleaseAfterClose>
- -->				</configuration>
-			</plugin>
 
 		</plugins>
 	</build>
 
 	<profiles>
+
+		<profile>
+	      <id>releases</id>
+	      <build>
+	         <plugins>
+				<!-- Deployment -->
+				<plugin>
+					<groupId>org.sonatype.plugins</groupId>
+					<artifactId>nexus-staging-maven-plugin</artifactId>
+					<version>1.6.7</version>
+				 	<executions>
+				      <execution>
+				         <id>default-deploy</id>
+				         <phase>deploy</phase>
+				         <goals>
+				            <goal>deploy</goal>
+				         </goals>
+				      </execution>
+				   </executions>				
+					<extensions>true</extensions>
+					<configuration>
+						<serverId>localhost-nexus-staging</serverId>
+						<nexusUrl>http://localhost:8081/nexus</nexusUrl>
+						<skipStaging>true</skipStaging>
+	<!-- 					<serverId>sonatype-nexus-staging</serverId>
+						<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+						<autoReleaseAfterClose>true</autoReleaseAfterClose>
+	 -->				</configuration>
+				</plugin>
+	         </plugins>
+	      </build>
+	   </profile>		
 
 		<!-- GPG Signature on release -->
 		<profile>
