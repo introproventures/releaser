@@ -184,5 +184,6 @@ http://central.sonatype.org/pages/apache-maven.html
 
 ### Credits
 
-David Carboni [https://github.com/davidcarboni/releaser](https://github.com/davidcarboni/releaser) 
+David Carboni [https://github.com/davidcarboni/releaser](https://github.com/davidcarboni/releaser)
+
 Baeldung [http://www.baeldung.com/maven-release-nexus](http://www.baeldung.com/maven-release-nexus)
