@@ -7,9 +7,10 @@
 	<name>Releaser</name>
 	<description>
 		An example for getting your GitHub project to Maven Central. Demonstrates required POM information and release plugin configuration. 
-		Many thanks to: http://datumedge.blogspot.co.uk/2012/05/publishing-from-github-to-maven-central.html
+		Many thanks to: https://github.com/davidcarboni/releaser
 	</description>
-	<url>https://github.com/davidcarboni/releaser</url>
+	
+	<url>https://github.com/introproventures/releaser</url>
 
 	<!-- Required: license information: -->
 	<licenses>
