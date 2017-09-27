@@ -34,7 +34,7 @@
 		<!-- You'll probably want to test this out with a local copy of Nexus OSS. -->
 		<!-- Remove these entries and uncomment the Sonatype Nexus repositories 
 			below when you actually want to release. -->
-		<snapshotRepository>
+<!-- 		<snapshotRepository>
 			<id>localhost-nexus-snapshots</id>
 			<name>Local Nexus snapshot repository</name>
 			<url>http://localhost:8081/nexus/content/repositories/snapshots/</url>
@@ -43,17 +43,17 @@
 			<id>localhost-nexus-staging</id>
 			<name>Local Nexus release repository</name>
 			<url>http://localhost:8081/nexus/content/repositories/releases/</url>
+		</repository> -->
+		<snapshotRepository>
+			<id>sonatype-nexus-snapshots</id>
+			<name>Sonatype Nexus snapshot repository</name>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>sonatype-nexus-staging</id>
+			<name>Sonatype Nexus release repository</name>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
 		</repository>
-<!-- 		<snapshotRepository> -->
-<!-- 			<id>sonatype-nexus-snapshots</id> -->
-<!-- 			<name>Sonatype Nexus snapshot repository</name> -->
-<!-- 			<url>https://oss.sonatype.org/content/repositories/snapshots</url> -->
-<!-- 		</snapshotRepository> -->
-<!-- 		<repository> -->
-<!-- 			<id>sonatype-nexus-staging</id> -->
-<!-- 			<name>Sonatype Nexus release repository</name> -->
-<!-- 			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url> -->
-<!-- 		</repository> -->
 	</distributionManagement>
 
 	<properties>
@@ -208,13 +208,14 @@
 				   </executions>				
 					<extensions>true</extensions>
 					<configuration>
-						<serverId>localhost-nexus-staging</serverId>
+<!-- 						<serverId>localhost-nexus-staging</serverId>
 						<nexusUrl>http://localhost:8081/nexus</nexusUrl>
 						<skipStaging>true</skipStaging>
-	<!-- 					<serverId>sonatype-nexus-staging</serverId>
+ -->					
+ 						<serverId>sonatype-nexus-staging</serverId>
 						<nexusUrl>https://oss.sonatype.org/</nexusUrl>
 						<autoReleaseAfterClose>true</autoReleaseAfterClose>
-	 -->				</configuration>
+					</configuration>
 				</plugin>
 	         </plugins>
 	      </build>
@@ -256,7 +257,7 @@
 		<developer>
 			<id>igdianov</id>
 			<name>Igor Dianov</name>
-			<email>igor@dianov.com</email>
+			<email>igor.dianov@introproventures.com</email>
 			<organization>IntroPro Ventures Inc.</organization>
 			<organizationUrl>https://github.com/introproventures</organizationUrl>
 			<url>https://github.com/igdianov</url>
