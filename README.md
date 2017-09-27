@@ -130,7 +130,7 @@ For public Nexus releases, use the following configuration in `nexus-staging-mav
     <configuration>
         <serverId>sonatype-nexus-staging</serverId>
         <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-        <autoReleaseAfterClose>true</autoReleaseAfterClose>
+        <autoReleaseAfterClose>false</autoReleaseAfterClose>
     </configuration>
 ```
 
